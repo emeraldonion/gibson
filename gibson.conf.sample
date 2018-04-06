@@ -1,0 +1,7 @@
+#
+# gibson sample configuration
+#
+
+# Location of jails, expect one folder per jail matching the name of the jail
+JAILS_PATH=/usr/jail/
+
