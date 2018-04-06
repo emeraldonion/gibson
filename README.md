@@ -23,9 +23,9 @@ gibson currently has no external dependencies (aside from those packaged in Hard
 
 ### Installing
 
-The recommended method of installing `gibson` is via `pkg` or with the HardenedBSD ports tree.  Since our project is recently launched, binary packages (or even the ports metadata) may not be available yet through the customary tools.  Until it is available in the ports tree, you can bootstrap your installation by retrieving the ports metadata from [@undervillain's github](https://github.com/undervillain/gibson-port):
+The recommended method of installing `gibson` is via `pkg` or with the HardenedBSD ports tree.  Since our project is recently launched, binary packages (or even the ports metadata) may not be available yet through the customary tools.  Until it is available in the ports tree, you can bootstrap your installation by retrieving the ports metadata from [Emerald Onion's GitHub](https://github.com/emeraldonion/gibson-port):
 
-`git clone https://github.com/undervillain/gibson-port /usr/ports/security/gibson`
+`git clone https://github.com/emeraldonion/gibson-port /usr/ports/security/gibson`
 
 You should inspect the files you download to make sure there is nothing sinister in them.  You should also make sure there is nothing sinister in the gibson repository.  No matter who you download from, you should always be careful running code you download from the Internet.
 
