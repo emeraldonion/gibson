@@ -1,0 +1,140 @@
+.\"-
+.\" Copyright (c) 2018, Emerald Onion
+.\" All rights reserved.
+.\" 
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions are met:
+.\" 
+.\" * Redistributions of source code must retain the above copyright notice, this
+.\"   list of conditions and the following disclaimer.
+.\" 
+.\" * Redistributions in binary form must reproduce the above copyright notice,
+.\"   this list of conditions and the following disclaimer in the documentation
+.\"   and/or other materials provided with the distribution.
+.\" 
+.\" THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+.\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+.\" DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+.\" SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+.\" CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+.\" OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+.\" OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\" 
+.Dd April 6, 2018
+.Dt gibson 8
+.Os
+.Sh NAME
+.Nm gibson
+.Nd gibson Tor management toolkit
+.Sh SYNOPSIS
+.Nm
+is comprised of a number of available subcommands to complete various administration activities.
+.Pp
+.Nm
+.Op common
+.Cm command
+.Op arguments
+.Op jailname ...
+.Ar command
+.Nm
+.Op common
+.Cm restart
+.Op arguments
+.Op jailname ...
+.Nm
+.Op common
+.Cm start
+.Op arguments
+.Op jailname ...
+.Nm
+.Op common
+.Cm stop
+.Op arguments
+.Op jailname ...
+.Nm
+.Op common
+.Cm update
+.Op arguments
+.Op jailname ...
+.Nm
+.Op common
+.Cm upgrade
+.Op arguments
+.Op jailname ...
+.Op package ...
+.Sh DESCRIPTION
+.Nm
+is a cross-functional suite of tools used to assist in provisioning and maintaining Tor services.
+.Pp
+.Nm
+doesn't replace tools such as ezjail, iocell, bhyve, nginx, caddy, LUKS and geli, but rather aims to glue them together into secure Tor services.
+.Pp
+Common arguments can be passed before or after the subcommand.  Subcommand-specific options must be specified after the subcommand.  Common options are:
+.Bl -tag -width indent -offset indent
+.It Xo
+.Op -v
+.Xc
+Be verbose.
+.El
+.Pp
+The subcommands are as follows:
+.Bl -tag -width indent -offset indent
+.It Xo
+.Cm command
+.Op jailname ...
+.Ar command
+.Xc
+Execute the specified
+.Ar command
+in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.
+.It Xo
+.Cm restart
+.Op jailname ...
+.Xc
+Restart the Tor service in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.
+.It Xo
+.Cm start
+.Op jailname ...
+.Xc
+Start the Tor service in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.
+.It Xo
+.Cm stop
+.Op jailname ...
+.Xc
+Gracefully stop the Tor service in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.
+.It Xo
+.Cm update
+.Op jailname ...
+.Xc
+Update system code in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.
+.It Xo
+.Cm upgrade
+.Op jailname ...
+.Op package ...
+.Xc
+Upgrade the specified packages in each of the jails specified in
+.Op jailname ...
+or in all jails if no jails are specified.  If no packages are specified, then upgrade the
+.Xr tor 1 
+package.
+.It Xo
+.Sh AUTHORS
+The first iteration of
+.Nm
+was written by
+.An Jordan Boland
+and
+.An Shawn Webb .
